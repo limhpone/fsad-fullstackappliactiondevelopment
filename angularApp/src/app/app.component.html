@@ -1,0 +1,15 @@
+<header class="topbar">
+  <div class="brand">Student Portal</div>
+  <nav class="links">
+    <a routerLink="/">Home</a>
+    <a routerLink="/contact">Contact</a>
+    <a routerLink="/projects" *ngIf="isLoggedIn">Projects</a>
+    <a routerLink="/chat" *ngIf="isLoggedIn">Chat</a>
+    <a routerLink="/login" *ngIf="!isLoggedIn">Login / Signup</a>
+    <button type="button" class="logout" *ngIf="isLoggedIn" (click)="logout()">Logout</button>
+  </nav>
+</header>
+
+<main class="content">
+  <router-outlet></router-outlet>
+</main>

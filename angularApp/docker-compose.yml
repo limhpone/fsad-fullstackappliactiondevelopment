@@ -1,0 +1,11 @@
+services:
+  mock_angularapp:
+    build: .
+    container_name: mock_angularapp
+    ports:
+      - "125970:4200"
+    volumes:
+      - .:/app
+      - /app/node_modules
+
+    command: npm start -- --host 0.0.0.0

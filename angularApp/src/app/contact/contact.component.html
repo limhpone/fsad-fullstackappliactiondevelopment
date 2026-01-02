@@ -1,0 +1,23 @@
+<section class="contact">
+  <h2>Contact Us</h2>
+  <p>Have a question or request? Send us a note below.</p>
+
+  <form (ngSubmit)="submit()">
+    <label>
+      Name
+      <input type="text" [(ngModel)]="name" name="name" placeholder="Your name" required />
+    </label>
+
+    <label>
+      Email
+      <input type="email" [(ngModel)]="email" name="email" placeholder="you@example.com" required />
+    </label>
+
+    <label>
+      Message
+      <textarea [(ngModel)]="message" name="message" rows="4" placeholder="How can we help?" required></textarea>
+    </label>
+
+    <button type="submit">Send message</button>
+  </form>
+</section>

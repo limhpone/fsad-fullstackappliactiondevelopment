@@ -1,0 +1,23 @@
+<section class="projects">
+  <header>
+    <h2>Projects</h2>
+    <button (click)="fetchProjects()" [disabled]="loading">Refresh</button>
+  </header>
+
+  <p *ngIf="loading">Loading projects...</p>
+  <p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
+
+  <ul *ngIf="projects.length">
+    <li *ngFor="let project of projects">
+      {{ project.id }}. {{ project.name }}
+    </li>
+  </ul>
+
+  <p *ngIf="!loading && !errorMessage && !projects.length">No projects available.</p>
+
+  <div class="random-project" *ngIf="projects.length">
+    <h3>Random Project Picker</h3>
+    <button (click)="getRandomProject()">Pick Random Project</button>
+    <p class="random-result" *ngIf="randomProject">{{ randomProject }}</p>
+  </div>
+</section>
